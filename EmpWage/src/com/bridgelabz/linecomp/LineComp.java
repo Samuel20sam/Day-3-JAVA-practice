@@ -43,8 +43,10 @@ public class LineComp {
 
         if (firstLineLength == secondLineLength) {
             System.out.println("\nTwo lines are equal");
+        } else if (firstLineLength < secondLineLength) {
+            System.out.println("\nSecond line is larger");
         } else {
-            System.out.println("\nTwo lines are not equal");
+            System.out.println("\nFirst line is larger");
         }
     }
 }
