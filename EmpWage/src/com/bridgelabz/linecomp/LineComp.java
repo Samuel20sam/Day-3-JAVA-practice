@@ -22,5 +22,29 @@ public class LineComp {
         double powLine1Y = Math.pow((y2 - y1), 2);
         double firstLineLength = Math.sqrt((powLine1X + powLine1Y));
         System.out.println("\nLength of line is: " + firstLineLength);
+
+        System.out.println("\nPoint for line 2");
+
+        System.out.println("\nEnter the value of x3: ");
+        double x3 = sc.nextDouble();
+        System.out.println("Enter the value of y3: ");
+        double y3 = sc.nextDouble();
+
+        System.out.println("Enter the value of x4: ");
+        double x4 = sc.nextDouble();
+        System.out.println("Enter the value of y4: ");
+        double y4 = sc.nextDouble();
+
+        double powLine2X = Math.pow((x4 - x3), 2);
+        double powLine2Y = Math.pow((y4 - y3), 2);
+
+        double secondLineLength = Math.sqrt((powLine2X + powLine2Y));
+        System.out.println("\nLength of line is: " + secondLineLength);
+
+        if (firstLineLength == secondLineLength) {
+            System.out.println("\nTwo lines are equal");
+        } else {
+            System.out.println("\nTwo lines are not equal");
+        }
     }
 }
