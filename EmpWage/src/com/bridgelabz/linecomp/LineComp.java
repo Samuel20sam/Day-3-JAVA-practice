@@ -2,8 +2,10 @@ package com.bridgelabz.linecomp;
 
 import java.util.Scanner;
 
-public class LineComp {
-    public static void main(String[] args) {
+public class LineComp
+{
+    public static void compareCalc()
+    {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("\nPoint for line 1");
@@ -41,12 +43,21 @@ public class LineComp {
         double secondLineLength = Math.sqrt((powLine2X + powLine2Y));
         System.out.println("\nLength of line is: " + secondLineLength);
 
-        if (firstLineLength == secondLineLength) {
+        Double firstLineLengthObj = firstLineLength;
+        Double secondLineLengthObj = secondLineLength;
+
+        int compareValue = firstLineLengthObj.compareTo(secondLineLengthObj);
+        if (compareValue == 0) {
             System.out.println("\nTwo lines are equal");
-        } else if (firstLineLength < secondLineLength) {
+        } else if (compareValue < 0) {
             System.out.println("\nSecond line is larger");
         } else {
             System.out.println("\nFirst line is larger");
         }
+    }
+
+    public static void main(String[] args)
+    {
+        compareCalc();
     }
 }
