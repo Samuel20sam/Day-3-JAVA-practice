@@ -19,8 +19,7 @@ public class EmpWage
         this.workingDaysPerMonth = workingDaysPerMonth;
         this.workingHoursPerMonth = workingHoursPerMonth;
     }
-
-
+    
     public void computeEmpWage()
     {
         int empHrs = 0;
@@ -39,11 +38,12 @@ public class EmpWage
             };
             totalEmpHrs += empHrs;
             System.out.println("On Day " + totalWorkingDays + " Emp Hours is :" + empHrs);
+
+            int totalEmpWage = totalEmpHrs * wagePerHour;
+            System.out.println("Total Emp Wage for the company: " + companyName+" is :" + totalEmpWage);
         }
     }
-    public String toString() {
-        return "Total Emp Wage for Company: " + companyName +" is: " + totalWage;
-    }
+
     public static void main(String[] args)
     {
         EmpWage paypal = new EmpWage("PayPal",40,25,120);
