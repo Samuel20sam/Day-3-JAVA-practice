@@ -4,17 +4,31 @@ public class EmpWage
 {
     public static final int IS_PART_TIME = 1;
     public static final int IS_FULL_TIME = 2;
+    int wagePerHour = 20;
+//    int fullDayHour = 16;
+//    int partTimeHour = 8;
+    int workingDaysPerMonth = 20;
+    int workingHoursPerMonth = 100;
+    int totalWage = 0;
+    String companyName;
 
-    public static void computeEmpWage(String companyName, int empRatePerHour, int  numOfWorkingDays, int maxHoursPerMonth)
+    public EmpWage (String companyName, int wagePerHour, int workingDaysPerMonth, int workingHoursPerMonth)
     {
-        //Variables
+        this.companyName = companyName;
+        this.wagePerHour = wagePerHour;
+        this.workingDaysPerMonth = workingDaysPerMonth;
+        this.workingHoursPerMonth = workingHoursPerMonth;
+    }
+
+
+    public void computeEmpWage()
+    {
         int empHrs = 0;
         int totalEmpHrs = 0;
         int totalWorkingDays = 0;
 
-        //Computation
-        while (totalEmpHrs <= maxHoursPerMonth &&
-                totalWorkingDays < numOfWorkingDays)
+        while (totalEmpHrs <= workingHoursPerMonth &&
+        totalWorkingDays < workingDaysPerMonth)
         {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
@@ -26,15 +40,17 @@ public class EmpWage
             totalEmpHrs += empHrs;
             System.out.println("On Day " + totalWorkingDays + " Emp Hours is :" + empHrs);
         }
-        int totalEmpWage = totalEmpHrs * empRatePerHour;
-        System.out.println("Total Emp Wage for the company: " + companyName+" is :" + totalEmpWage);
-
-
+    }
+    public String toString() {
+        return "Total Emp Wage for Company: " + companyName +" is: " + totalWage;
     }
     public static void main(String[] args)
     {
-        computeEmpWage("PayPal",40,25,120);
-        computeEmpWage("Tesla",35,25,95);
-        computeEmpWage("Airtel",35,25,100);
+        EmpWage paypal = new EmpWage("PayPal",40,25,120);
+        paypal.computeEmpWage();
+        EmpWage tesla = new EmpWage("Tesla",35,25,95);
+        tesla.computeEmpWage();
+        EmpWage airtel = new EmpWage("Airtel",30,25,105);
+        airtel.computeEmpWage();
     }
 }
