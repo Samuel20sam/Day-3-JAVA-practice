@@ -27,7 +27,7 @@ public class EmpWage
         this.fullDayHour = fullDayHour;
         this.partTimeHour = partTimeHour;
     }
-    
+
     public void computeEmpWage()
     {
         int empWage = 0;
@@ -41,18 +41,18 @@ public class EmpWage
             Random num = new Random();
             int empCheck = num.nextInt(2)+1;
 
-                if( empCheck == IS_PART_TIME)
-                    if (totalWorkingHours + partTimeHour <= workingHoursPerMonth)
-                    {
-                        empWage = wagePerHour * partTimeHour;
-                        totalWorkingHours = totalWorkingHours + partTimeHour;
-                    }
-                if ( empCheck == IS_FULL_TIME)
-                    if (totalWorkingHours + fullDayHour <= workingHoursPerMonth)
-                        {
-                        empWage = wagePerHour * fullDayHour;
-                        totalWorkingHours = totalWorkingHours + fullDayHour;
-                        }
+            if( empCheck == IS_PART_TIME)
+                if (totalWorkingHours + partTimeHour <= workingHoursPerMonth)
+                {
+                    empWage = wagePerHour * partTimeHour;
+                    totalWorkingHours = totalWorkingHours + partTimeHour;
+                }
+            if ( empCheck == IS_FULL_TIME)
+                if (totalWorkingHours + fullDayHour <= workingHoursPerMonth)
+                {
+                    empWage = wagePerHour * fullDayHour;
+                    totalWorkingHours = totalWorkingHours + fullDayHour;
+                }
             dailyWage.add(empWage);
             totalEmpWage = totalEmpWage + empWage;
             totalWorkingDays++;
@@ -84,5 +84,7 @@ public class EmpWage
         {
             System.out.println(employeeObject);
         }
+        int EmpWage = empWage.getTotalWage("Airtel");
+        System.out.println(EmpWage);
     }
 }

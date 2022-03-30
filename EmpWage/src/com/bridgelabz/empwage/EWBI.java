@@ -2,8 +2,20 @@ package com.bridgelabz.empwage;
 
 import java.util.ArrayList;
 
-public class EWBI extends EmpWageBuilder {
+public class EWBI implements EmpWageBuilder
+{
     static ArrayList<EmpWage> array = new ArrayList();
+
+    @Override
+    public int getTotalWage(String companyName) {
+        int totalWage = 0;
+        for (EmpWage employeeObject : EWBI.array) {
+            if (companyName.equals(employeeObject.companyName)) {
+                totalWage = employeeObject.totalEmpWage;
+            }
+        }
+        return totalWage;
+    }
 
     @Override
     public void createWageBuilder() {

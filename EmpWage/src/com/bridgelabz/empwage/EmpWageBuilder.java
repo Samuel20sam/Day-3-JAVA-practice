@@ -1,8 +1,8 @@
 package com.bridgelabz.empwage;
 
-public class EmpWageBuilder
+public interface EmpWageBuilder
 {
-    void createWageBuilder() {
+    void createWageBuilder();
+    int getTotalWage (String companyName);
 
-    }
 }
