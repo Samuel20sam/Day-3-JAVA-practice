@@ -56,11 +56,11 @@ public class EmpWage
             dailyWage.add(empWage);
             totalEmpWage = totalEmpWage + empWage;
             totalWorkingDays++;
-            System.out.println("Total Wage for Day" + (totalWorkingDays) + " is : " + totalEmpWage);
+            System.out.println("Total Wage for Day " + (totalWorkingDays) +" of " +companyName +" is : " + totalEmpWage);
         }
-        System.out.println("Total Working Days :" + totalWorkingDays);
-        System.out.println("Total Working Hours :" + totalWorkingHours);
-        System.out.println("Employee Wage :" + totalEmpWage);
+        System.out.println("Total Working Days " +"of " +companyName +" is : " + totalWorkingDays);
+        System.out.println("Total Working Hours " +"of " +companyName +" is : " + totalWorkingHours);
+        System.out.println("Employee Wage " +"of " +companyName +" is : " + totalEmpWage);
     }
     @Override
     public String toString() {
@@ -78,8 +78,9 @@ public class EmpWage
 
     public static void main(String[] args)
     {
-        EmpWageBuilder.createEmployeeWage();
-        for (Object employeeObject : EmpWageBuilder.array)
+        EmpWageBuilder empWage = new EWBI();
+        empWage.createWageBuilder();
+        for (Object employeeObject : EWBI.array)
         {
             System.out.println(employeeObject);
         }
